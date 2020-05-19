@@ -1,0 +1,17 @@
+
+
+.main-container{
+    height: 420px;
+    width: auto;
+    display: grid;
+    gap: 1px;
+    grid-template-rows: repeat(8, 1fr);
+    background-color: black;
+}
+
+.row-element{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap:1.4px;
+    
+}
