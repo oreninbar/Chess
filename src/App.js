@@ -5,7 +5,7 @@ import Board from './componenets/board/Board';
 
 
 
-const App = inject('boardStore')(observer((props) => {
+const App = inject('gameStore')(observer((props) => {
   return (
     <div className="App">
       <Board />

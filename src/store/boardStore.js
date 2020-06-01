@@ -1,5 +1,12 @@
-import { observable } from 'mobx'
+import { observable,action } from 'mobx'
 
+// import {Soldier} from '../players/soldier.js'
+import {Rook} from '../players/rook.js'
+import {Knight} from '../players/knight.js'
+import {King} from '../players/king.js'
+import {Bishop} from '../players/bishop.js'
+import {Queen} from '../players/queen.js'
+import {Pawn} from '../players/pawn.js'
 
 export class BoardStore {
     @observable boardMatrix
@@ -14,86 +21,37 @@ export class BoardStore {
         for (let r = 0; r < this.dimention; r++) {
             let row = []
             for (let c = 0; c < this.dimention; c++) {
-                if (r == 1)
-                    row.push('p1')
-                else if (r == 6)
-                    row.push('p2')
+                if (r === 1)
+                    row.push(new Pawn(r,c,"https://img.icons8.com/officel/40/000000/pawn.png","p1"))
+                else if (r === 6)
+                    row.push(new Pawn(r,c,"https://img.icons8.com/ultraviolet/40/000000/pawn.png","p2"))
                 else row.push(0)
             }
             matrix.push(row)
         }
-        matrix[0][0] = 'r1'
-        matrix[0][1] = 'k1'
-        matrix[0][2] = 'b1'
-        matrix[0][3] = 'q1'
-        matrix[0][4] = 'K1'
-        matrix[0][5] = 'b1'
-        matrix[0][6] = 'k1'
-        matrix[0][7] = 'r1'
+        matrix[0][0] = new Rook(0, 0, "https://img.icons8.com/officel/40/000000/rook.png", 'r1','rook')
+        matrix[0][1] = new Knight(0, 1, "https://img.icons8.com/officel/40/000000/knight.png", 'k1','knight')
+        matrix[0][2] = new Bishop(0, 2, "https://img.icons8.com/officel/40/000000/bishop.png", 'b1','bishop')
+        matrix[0][3] = new Queen(0, 3, "https://img.icons8.com/officel/40/000000/queen.png", 'q1','queen')
+        matrix[0][4] = new King(0, 4, "https://img.icons8.com/officel/40/000000/king.png", 'K1','king')
+        matrix[0][5] = new Bishop(0, 5, "https://img.icons8.com/officel/40/000000/bishop.png", 'b1','bishop')
+        matrix[0][6] = new Knight(0, 6, "https://img.icons8.com/officel/40/000000/knight.png", 'k1','knight')
+        matrix[0][7] = new Rook(0, 7, "https://img.icons8.com/officel/40/000000/rook.png", 'r1','rook')
 
-        matrix[7][0] = 'r2'
-        matrix[7][1] = 'k2'
-        matrix[7][2] = 'b2'
-        matrix[7][3] = 'q2'
-        matrix[7][4] = 'K2'
-        matrix[7][5] = 'b2'
-        matrix[7][6] = 'k2'
-        matrix[7][7] = 'r2'
+        matrix[7][0] = new Rook(7,0,"https://img.icons8.com/ultraviolet/40/000000/rook.png",'r2','rook')
+        matrix[7][1] = new Knight(7, 1, "https://img.icons8.com/ultraviolet/40/000000/knight.png", 'k2','knight')
+        matrix[7][2] = new Bishop(7, 2, "https://img.icons8.com/ultraviolet/40/000000/bishop.png", 'b2','bishop')
+        matrix[7][3] = new Queen(7, 3, "https://img.icons8.com/ultraviolet/40/000000/queen.png", 'q2','queen')
+        matrix[7][4] = new King(7, 4, "https://img.icons8.com/ultraviolet/40/000000/king.png", 'K2','king')
+        matrix[7][5] = new Bishop(7, 5, "https://img.icons8.com/ultraviolet/40/000000/bishop.png", 'b2','bishop')
+        matrix[7][6] = new Knight(7, 6, "https://img.icons8.com/ultraviolet/40/000000/knight.png", 'k2','knight')
+        matrix[7][7] = new Rook(7,7,"https://img.icons8.com/ultraviolet/40/000000/rook.png",'r2','rook')
 
-
-        // for (let i = 0; i < this.dimention; i++)
-        //     for (let j = 0; j < this.dimention; j++) {
-        //         console.log(matrix[i][j]);
-        //     }
-        console.log(matrix);
         return matrix
     }
 
+    @action changePosition() {
 
-
-    /*
-      matrix[0][0] = 'r1'
-        matrix[1][0] = 'k1'
-        matrix[2][0] = 'b1'
-        matrix[3][0] = 'q1'
-        matrix[4][0] = 'K1'
-        matrix[5][0] = 'b1'
-        matrix[6][0] = 'k1'
-        matrix[7][0] = 'r1'
-
-        matrix[0][7] = 'r2'
-        matrix[1][7] = 'k2'
-        matrix[2][7] = 'b2'
-        matrix[3][7] = 'q2'
-        matrix[4][7] = 'K2'
-        matrix[5][7] = 'b2'
-        matrix[6][7] = 'k2'
-        matrix[7][7] = 'r2'
-    @observable board = []
-
-    @action initBoard() {
-        for (let i = 1; i < 9; i++)
-                this.board.push(i)
     }
 
-    */
-    // @action placeKnight(){
-
-
-    // }
-    // @action placePawn(){
-
-    // }
-    // @action placeRook(){
-
-    // }
-    // @action placeQueen(){
-
-    // }
-    // @action placeKing(){
-
-    // }
-    // @action placeBishop(){
-
-    // }
 }

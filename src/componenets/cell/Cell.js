@@ -3,7 +3,24 @@ import { observer, inject } from 'mobx-react'
 import './Cell.css'
 
 
-const Cell = inject('boardStore')(observer((props) => {
+const Cell = inject('gameStore')(observer((props) => {
+
+    return (
+        
+        <div className='cell-container' >
+            {props.item ? <img src={props.item.img} alt={props.item.name}/> : null}
+        </div>
+    )
+
+}))
+
+export default Cell
+
+
+/*
+
+
+
     function addImage() {
         switch (props.item) {
             case 'r1':
@@ -34,15 +51,10 @@ const Cell = inject('boardStore')(observer((props) => {
                 console.log('cant find the right image')
         }
 
-
-
+        function makeMove(){
+            // props.gameStore.boardGame
+        }
     }
-    return (
-        <div className='cell-container'>
-            {props.item ? <img src={addImage()} /> : null}
-        </div>
-    )
 
-}))
 
-export default Cell
+    */
