@@ -1,37 +1,33 @@
-import {Soldier} from './soldier.js'
+import { Soldier } from './soldier.js'
 export class Knight extends Soldier {
 
 
 
-    checkMove(desirableX, desirableY) {
-        if (this.checkPosition(desirableX, desirableY)) {
-            if (this.x + 1 === desirableX && this.y + 2 === desirableY)
+    checkMove(desirableR,desirableC) {
+        debugger
+        if (this.checkPosition(desirableR,desirableC)) {
+            if (this.c + 1 === desirableC && this.r + 2 === desirableR)
                 return true
-            else if (this.x + 2 === desirableX && this.y + 1 === desirableY)
+            else if (this.c + 2 === desirableC && this.r + 1 === desirableR)
                 return true
-            else if (this.x + 2 === desirableX && this.y - 1 === desirableY)
+            else if (this.c + 2 === desirableC && this.r - 1 === desirableR)
                 return true
-            else if (this.x + 1 === desirableX && this.y - 2 === desirableY)
+            else if (this.c + 1 === desirableC && this.r - 2 === desirableR)
                 return true
-            else if (this.x - 1 === desirableX && this.y - 2 === desirableY)
+            else if (this.c - 1 === desirableC && this.r - 2 === desirableR)
                 return true
-            else if (this.x - 2 === desirableX && this.y - 1 === desirableY)
+            else if (this.c - 2 === desirableC && this.r - 1 === desirableR)
                 return true
-            else if (this.x - 2 === desirableX && this.y + 1 === desirableY)
+            else if (this.c - 2 === desirableC && this.r + 1 === desirableR)
                 return true
-            else if (this.x - 1 === desirableX && this.y + 2 === desirableY)
+            else if (this.c - 1 === desirableC && this.r + 2 === desirableR)
                 return true
         }
         else return false
     }
 
-    makeMove(x,y){
-        if (this.checkMove(x,y)){
-            this.changePosition(x,y)
-        }
-    }
 
 
 
-    
+
 }

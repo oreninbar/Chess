@@ -1,22 +1,16 @@
-import {Soldier} from './soldier.js'
+import { Soldier } from './soldier.js'
 export class King extends Soldier {
 
-
-
-
-    checkMove(desirableX, desirableY) {
-        // if (this.checkPosition(desirableX, desirableY)) {
-        //     if(this,this.firstMove)
-
-        // }
-        // else return false
-    }
-
-    makeMove(x, y) {
-        if (this.checkMove(x, y)) {
-            this.changePosition(x, y)
+    checkMove(desirableR,desirableC) {
+        debugger
+        if (this.checkPosition(desirableR,desirableC)) {
+            if (Math.abs(desirableC - this.c) < 2 && Math.abs(desirableR - this.r) < 2)
+                return true
+            else return false
         }
     }
+
+
 
 
 

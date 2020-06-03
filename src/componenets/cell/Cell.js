@@ -6,9 +6,8 @@ import './Cell.css'
 const Cell = inject('gameStore')(observer((props) => {
 
     return (
-        
         <div className='cell-container' >
-            {props.item ? <img src={props.item.img} alt={props.item.name}/> : null}
+            {props.item ? <img src={props.item.img} alt={props.item.name} /> : null}
         </div>
     )
 

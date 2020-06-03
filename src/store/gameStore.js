@@ -9,7 +9,7 @@ export class GameStore {
     @observable onGoing
     @observable timer
 
-    constructor(player1, player2,boardGame) {
+    constructor(player1, player2, boardGame) {
         this.onGoing = true
         this.gameBoard = boardGame
         this.gameId = ''
@@ -37,11 +37,14 @@ export class GameStore {
     playGame() {
         console.log('start the game');
         while (this.onGoing) {
-            console.log(`player ${this.turn} start play`);
-            // this.timer=new statman.Stopwatch()
-            this.timer.start()
-            
-        
+            alert(`player ${this.turn} start play`);
+            let soldier = prompt(`enter soldier`)
+            let place = prompt(`enter place`)
+            if (soldier === 'a') {
+                this.onGoing = false
+                break
+            }
+            this.gameBoard.moveSoldier(soldier, place)
         }
     }
 
