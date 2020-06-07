@@ -45,6 +45,7 @@ export class GameStore {
                 break
             }
             this.gameBoard.moveSoldier(soldier, place)
+            this.changeTurn()
         }
     }
 

@@ -1,6 +1,8 @@
 import React from 'react'
 import { observer, inject } from 'mobx-react'
 import Cell from '../cell/Cell';
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 import './Board.css'
 
 const Board = inject('gameStore')(observer((props) => {

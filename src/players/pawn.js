@@ -8,7 +8,8 @@ export class Pawn extends Soldier {
 
 
     checkMove(desirableR, desirableC) {
-        debugger
+        //debugger
+
         if (this.checkPosition(desirableR, desirableC)) {
             if (this.id === 'p1') {
                 if (this.firstMove) {

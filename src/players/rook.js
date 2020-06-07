@@ -5,7 +5,8 @@ export class Rook extends Soldier {
 
 
     checkMove(desirableR, desirableC) {
-        debugger
+                //debugger
+
         if (this.checkPosition(desirableR, desirableC)) {
             if (desirableC === 0 || desirableR === 0)
                 return true

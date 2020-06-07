@@ -56,23 +56,13 @@ export class BoardStore {
         let col = parseInt(soldier) % 10
         let newRow = Math.floor(place / 10)
         let newCol = parseInt(place) % 10
-        console.log(this.boardMatrix[row][col].checkPosition(newRow, newCol));
-        console.log(this.boardMatrix[row][col].checkMove(newRow, newCol));
-        try {
 
-        } catch (e) {
-            console.log(e);
-        }
+        
         this.boardMatrix[row][col].makeMove(newRow, newCol)
         this.boardMatrix[newRow][newCol] = this.boardMatrix[row][col]
         this.boardMatrix[row][col] = 0
 
-        // if (this.boardMatrix[row][col].checkPosition(newRow, newCol)) {
-        //     this.boardMatrix[row][col].changePosition(newRow, newCol)
-        //     this.boardMatrix[newRow][newCol] = this.boardMatrix[row][col]
-        //     this.boardMatrix[row][col] = null
 
-        // }
     }
 
 }

@@ -4,7 +4,8 @@ export class Knight extends Soldier {
 
 
     checkMove(desirableR,desirableC) {
-        debugger
+                //debugger
+
         if (this.checkPosition(desirableR,desirableC)) {
             if (this.c + 1 === desirableC && this.r + 2 === desirableR)
                 return true
